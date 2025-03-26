@@ -20,6 +20,10 @@ const config: Config = {
 export default config;
 
 export const corsOptions = {
-  origin: `${process.env.PROTOCOL}://${process.env.ORIGIN}${process.env.ORIGIN === 'localhost' ? ':4000' : ''}`, // Specify the client origin (TODO: change later in deployment)
+  origin: process.env.NODE_ENV === "production"
+  ? process.env.CLIENT_URL
+  : "http://localhost:4000",
   credentials: true, // Allow credentials (cookies, etc.)
 };
+
+console.log("LOADED NODE_ENV: ", process.env.NODE_ENV);
