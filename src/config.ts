@@ -20,7 +20,9 @@ const config: Config = {
 export default config;
 
 export const corsOptions = {
-  origin: "https://lesson-lab-client.vercel.app",
+  origin: process.env.NODE_ENV === "production" // Set deployment env var to production
+  ? "https://lesson-lab-client.vercel.app"
+  : "http://localhost:4000",
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],

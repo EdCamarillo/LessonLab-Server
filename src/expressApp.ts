@@ -19,6 +19,7 @@ class ExpressApp {
   constructor(
     public app = express(),
   ) {
+    app.options("*", cors(corsOptions));
     app.use(cors(corsOptions));
     app.use(cookieParser());
     app.use(bodyParser.json());
@@ -32,6 +33,14 @@ class ExpressApp {
     app.use('/api/workspaces/modules', moduleRoutes);
     app.use('/api/transactions', transactionRoutes)
     app.use('/api/exports', exportRoutes)
+
+    app.use((req, res, next) => {
+      res.header("Access-Control-Allow-Origin", "https://lesson-lab-client.vercel.app");
+      res.header("Access-Control-Allow-Credentials", "true");
+      res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+      res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+      next();
+    });
   }
 }
 
