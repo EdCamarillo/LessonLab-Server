@@ -1,39 +1,25 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "server.ts",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "/server.ts"
-      }
-    ],
-    "headers": [
-      {
-        "source": "/api/(.*)",
-        "headers": [
-          {
-            "key": "Access-Control-Allow-Origin",
-            "value": "https://lesson-lab-client.vercel.app"
-          },
-          {
-            "key": "Access-Control-Allow-Credentials",
-            "value": "true"
-          },
-          {
-            "key": "Access-Control-Allow-Methods",
-            "value": "GET, POST, PUT, DELETE, OPTIONS"
-          },
-          {
-            "key": "Access-Control-Allow-Headers",
-            "value": "Content-Type, Authorization"
-          }
-        ]
-      }
-    ]
-  }
-  
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://lesson-lab-client.vercel.app"
+        },
+        {
+          "key": "Access-Control-Allow-Credentials",
+          "value": "true"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, PUT, DELETE, OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type, Authorization"
+        }
+      ]
+    }
+  ]
+}
