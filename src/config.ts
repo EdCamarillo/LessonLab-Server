@@ -19,11 +19,11 @@ const config: Config = {
 
 export default config;
 
-const corsOptions = {
+export const corsOptions = {
   origin: "https://lesson-lab-client.vercel.app",
   credentials: true,
-  methods: "GET,POST,PUT,DELETE,OPTIONS",
-  allowedHeaders: "Content-Type,Authorization",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
 };
 
 console.log("LOADED NODE_ENV: ", process.env.NODE_ENV);
