@@ -5,7 +5,7 @@
     "experimentalDecorators": true,
     "lib": ["es2020"],
     "module": "commonjs",
-    "outDir": "./dist",
+    "outDir": "api/dist",
     "rootDir": "./src",
     "sourceMap": true,
     "strict": true,
@@ -26,6 +26,6 @@
   "exclude": [
     "node_modules",
     "uploads",
-    "dist" 
+    "api/dist" 
   ]
 }
