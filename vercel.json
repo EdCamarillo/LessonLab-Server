@@ -21,5 +21,11 @@
         }
       ]
     }
-  ]
+  ],
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/dist/index.js" }
+  ],
+  "functions": {
+    "dist/index.js": { "runtime": "nodejs22.x" }
+  }
 }
