@@ -8,7 +8,7 @@
     "ngrok": "ngrok http 4001",
     "start": "node --max-old-space-size=4096 api/index.js",
     "dev": "nodemon --exec \"node --max-old-space-size=4096\" -r ts-node/register src/index.ts",
-    "build": "npm install --include=dev && npx tsc --outDir dist",
+    "build": "npm install --include=dev && npx tsc --outDir dist && rm -rf api && cp -r dist api",
     "vercel-build": "npm run build"
   },
   
