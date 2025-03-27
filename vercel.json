@@ -26,6 +26,6 @@
     { "source": "/api/(.*)", "destination": "/dist/index.js" }
   ],
   "functions": {
-    "dist/index.js": { "runtime": "nodejs22.x" }
+    "dist/index.js": { "runtime": "nodejs18.x" }
   }
 }
