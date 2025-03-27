@@ -9,7 +9,7 @@
     "start": "node --max-old-space-size=4096 api/index.js",
     "dev": "nodemon --exec \"node --max-old-space-size=4096\" -r ts-node/register src/index.ts",
     "build": "npm install --include=dev && npx tsc --outDir dist",
-    "vercel-build": "npm run build && mkdir -p api && mv dist/* api/"
+    "vercel-build": "npm run build && mkdir api && mv dist/* api/"
   },
   
   "keywords": [],
